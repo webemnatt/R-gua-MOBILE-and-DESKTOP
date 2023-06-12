@@ -1,0 +1,166 @@
+$green4: #67a49f;
+$greenClear: #cee4de;
+$grey: #d9d9d9;
+$white: #ffffff;
+
+* {
+  margin: 0;
+}
+
+.pregnancy-ruler-container {
+  font-family: 'Euclid Circular A', 'Montserrat', 'Arial', sans-serif;
+  left: 116px;
+  top: 688px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d980;
+  box-shadow: 0px 4px 4px 0px #0000001f;
+  background: linear-gradient(0deg, #cee4de, #cee4de),
+    linear-gradient(0deg, rgba(217, 217, 217, 0.5), rgba(217, 217, 217, 0.5));
+  padding: 37px 0 18px 0;
+
+  &__title {
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    color: $green4;
+  }
+}
+
+.pregnancy-ruler-scroll-container {
+  display: flex;
+  &__ref {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__scrollable {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: grab;
+    padding: 60px 34px 89px 34px;
+  }
+}
+
+.pregnancy-week-card {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: $white;
+  margin-right: 11px;
+  padding: 17px 18px 34px 24px;
+  color: $green4;
+  border: 1px #d9d9d9;
+  box-shadow: 0px 4px 4px 0px #0000005f;
+  border-radius: 20px;
+
+  &__text {
+    margin-right: 21px;
+    font-size: 10px;
+    white-space: nowrap;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0px;
+    text-align: left;
+
+    &__number {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 43px;
+      letter-spacing: 0px;
+      text-align: center;
+    }
+
+    &__weeks {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0px;
+      text-align: left;
+    }
+  }
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  display: flex;
+  text-decoration: none;
+}
+
+img {
+  margin-top: 16px;
+  border-color: $grey;
+  width: 50px;
+  height: 50px;
+}
+
+.arrows-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 37px;
+  cursor: pointer;
+  &__left {
+    content: url('./svgIcons/LeftArrow.svg');
+  }
+  &__right {
+    content: url('./svgIcons/RightArrow.svg');
+  }
+}
+
+@media (max-width: 768px) {
+  .pregnancy-ruler-container {
+    &__footer {
+      display: flex;
+      justify-content: space-around;
+
+      position: relative;
+      &::before {
+        content: url('./svgIcons/ScrollHand.svg');
+        margin: 0px 0px 0px -250px;
+      }
+      &::after {
+        position: absolute;
+        content: 'Arraste para ver outras semanas';
+        color: $green4;
+        margin: 5px 0px 0px 30px;
+      }
+    }
+  }
+
+  .pregnancy-ruler-scroll-container {
+    &__scrollable {
+      overflow-x: scroll;
+      padding: 24px 34px;
+    }
+    &__scrollable::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__scrollable {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+
+  .arrows-navigation {
+    display: block;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px;
+    cursor: default;
+    &__left,
+    &__right {
+      content: none;
+    }
+  }
+}
