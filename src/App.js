@@ -36,34 +36,34 @@ export default function App() {
   };
 
   return (
-    <div className="pregnancy-ruler-container">
-      <div className="pregnancy-ruler-container__title">
-        Gravidez semana a semana:
-      </div>
-      <div className="pregnancy-ruler-scroll-container">
+    <div className="ruler-container">
+      <div className="ruler-container__title">Gravidez semana a semana:</div>
+      <div className="ruler-container__scroll">
         <div
-          className="arrows-navigation"
+          className="ruler-container__arrows-navigation"
           onClick={handleLeftButtonClick}
           onMouseDown={handleMouseDown}
           id="leftButton"
         >
-          <div className="arrows-navigation__left"></div>
+          <div className="ruler-container__arrows-navigation__left"></div>
         </div>
 
-        <div
-          className="pregnancy-ruler-scroll-container__ref"
-          ref={containerRef}
-        >
-          <div className="pregnancy-ruler-scroll-container__scrollable">
+        <div className="ruler-container__scroll__ref" ref={containerRef}>
+          <div className="ruler-container__scroll__scrollable">
             {Array.from({ length: 41 }).map((_, index) => (
               <>
-                <a className="pregnancy-week-card" href="http://www.google.com">
-                  <div className="pregnancy-week-card__text">
-                    <div className="pregnancy-week-card__text__number">
+                <a
+                  className="ruler-container__scroll__scrollable__week-card"
+                  href="http://www.google.com"
+                >
+                  <div className="ruler-container__scroll__scrollable__week-card__text">
+                    <div className="ruler-container__scroll__scrollable__week-card__text__number">
                       {index + 2}
                     </div>
-                    <p className="pregnancy-week-card__text__weeks">Semanas</p>
-                    <p className="pregnancy-week-card__text__pregnancy">
+                    <p className="ruler-container__scroll__scrollable__week-card__text__weeks">
+                      Semanas
+                    </p>
+                    <p className="ruler-container__scroll__scrollable__week-card__text__pregnancy">
                       de gravidez
                     </p>
                   </div>
@@ -82,15 +82,15 @@ export default function App() {
           </div>
         </div>
         <div
-          className="arrows-navigation"
+          className="ruler-container__arrows-navigation"
           onClick={handleRightButtonClick}
           onMouseDown={handleMouseDown}
           id="rightButton"
         >
-          <div className="arrows-navigation__right"></div>
+          <div className="ruler-container__arrows-navigation__right"></div>
         </div>
       </div>
-      <div className="pregnancy-ruler-container__footer"></div>
+      <div className="ruler-container__footer"></div>
     </div>
   );
 }
